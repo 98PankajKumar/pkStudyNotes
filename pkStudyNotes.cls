@@ -47,13 +47,7 @@
 	BoldItalicFont=Fira Sans Medium Italic
 ]
 \newfontfamily{\titleFont}{Philosopher Bold}
-\newfontfamily{\condensedFont}{Fira Sans Condensed}
-\newfontfamily{\subtitleFont}{Fira Sans Extra Condensed Light}
 \newfontfamily{\chapterFont}{Philosopher Italic}
-\newfontfamily{\chapternumberFont}{Fira Sans Extra Condensed Black}
-\newfontfamily{\sectionFont}{Fira Sans Extra Condensed}
-\newfontfamily{\sectionNumbers}{Fira Sans Extra Condensed Bold}
-\newfontfamily{\smallFont}{Fira Sans}
 
 \setfontfamily{\FA}{Font Awesome 5 Free Regular}
 \setfontfamily{\FASolid}{Font Awesome 5 Free Solid}[AutoFakeBold=1]
@@ -118,3 +112,38 @@
 \endgroup
 
 }
+
+
+% ~~ Chapter Styling ~~
+\newlength{\numberheight} 
+\newlength{\chaprule}
+
+\makechapterstyle{pkChapter}{%
+	\setlength{\afterchapskip}{40pt}
+	\renewcommand*{\chapterheadstart}{\vspace*{40pt}}
+	\renewcommand*{\afterchapternum}{\par\nobreak\vskip 25pt}
+	\renewcommand*{\chapnamefont}{\normalfont\LARGE\flushright}
+	\renewcommand*{\chapnumfont}{\normalfont\fontsize{42pt}{60pt}\selectfont}
+	\renewcommand*{\chaptitlefont}{\chapterFont\fontsize{42pt}{60pt}\selectfont}
+	\renewcommand*{\printchaptername}{%
+		\chapnamefont\MakeUppercase{\raisebox{0.4ex}{\@chapapp}} \hspace*{8mm}}
+	\renewcommand*{\chapternamenum}{}
+	\setlength{\beforechapskip}{8mm}
+	\setlength{\midchapskip}{\paperwidth}
+	\addtolength{\midchapskip}{-\textwidth}
+	\addtolength{\midchapskip}{-\spinemargin}
+	\setlength{\chaprule}{\textwidth}
+	\renewcommand*{\printchapternum}{%
+		\makebox[0pt][l]{\hspace{.5em}%
+			\resizebox{!}{\numberheight}{\hspace*{-8mm}\chapnumfont \thechapter}%
+			\hspace{.8em}%
+			%
+			}
+			\raisebox{3mm}{\par\noindent{\color{mainColour} \rule{\chaprule}{1pt}}}}%
+		\makeoddfoot{plain}{}{}{\thepage}
+
+
+	}
+
+
+\chapterstyle{pkChapter}
