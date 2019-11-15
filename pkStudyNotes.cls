@@ -48,6 +48,8 @@
 ]
 \newfontfamily{\titleFont}{Philosopher Bold}
 \newfontfamily{\chapterFont}{Philosopher Italic}
+\newfontfamily{\sectionFont}{Fira Sans Extra Condensed}
+\newfontfamily{\sectionNumbers}{Fira Sans Extra Condensed Bold}
 
 \setfontfamily{\FA}{Font Awesome 5 Free Regular}
 \setfontfamily{\FASolid}{Font Awesome 5 Free Solid}[AutoFakeBold=1]
@@ -56,6 +58,7 @@
 \definecolor{mainColour}{RGB}{211, 47, 47}
 \colorlet{complementColour}{-mainColour}
 
+\definecolor{sectionNumbersColour}{gray}{.8}
 
 % ~~ Title ~~ 
 \newlength{\drop}
@@ -147,3 +150,13 @@
 
 
 \chapterstyle{pkChapter}
+
+% ~~ Section Headings Style ~~
+
+\setsecnumformat{%
+	\fontsize{48pt}{72pt}\sectionNumbers\selectfont {%
+		\color{sectionNumbersColour}\raisebox{-0.25ex}{\thesection} \hspace*{-7mm}
+		}}
+
+\setsecheadstyle{ \fontsize{20pt}{30pt}\sectionFont\selectfont}	
+		
