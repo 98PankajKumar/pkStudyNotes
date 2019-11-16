@@ -13,7 +13,7 @@ To create the title page use `\createtitle` as opposed to the usual `\maketitle`
     \titleQuote{Quote}{Quotee}
     \courseURL{www.LinkToCourse.com}
 ```
-
+Other than the usual LaTeX features, `\marginpar{text}` can be used to create notes on the side of the main text. This function will be updated in the future (who knows when) to include more options and in general look better. 
 ## Features to Implement
 
 Additional features that I would like to add if I have time: 
