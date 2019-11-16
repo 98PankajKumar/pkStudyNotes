@@ -70,9 +70,9 @@
 \newcommand{\@courseURL}{}
 \newcommand{\courseURL}[1]{\renewcommand{\@courseURL}{\href{#1}{Course Website}}}
 \newcommand{\@titleQuote}{}
-\newcommand{\titleQuote}[2]{\renewcommand{\@titleQuote}{\titleQuoteIcon{\FASolid\symbol{"F10D}} \hspace{1cm} \titleQuoteIcon{\FASolid\symbol{"F10E}} \\[2mm] \textit{ #1 }  \\ \hspace*{5mm} - #2}}
+\newcommand{\titleQuote}[2]{\renewcommand{\@titleQuote}{\titleQuoteIcon{\FASolid\symbol{"F10D}} \hspace{1cm} \titleQuoteIcon{\FASolid\symbol{"F10E}} \\[2mm] \textit{ #1 }  \\ \hspace*{5mm}  \textsc{#2}}}
 
-\newcommand*{\createTitle}{
+\newcommand*{\createtitle}{
 	\begin{tikzpicture}[remember picture,overlay]		
 		\node[right=10.4cm of current page.center] (A) {};
 		\node[left=6cm of current page.north east] (B) {};
@@ -152,11 +152,18 @@
 \chapterstyle{pkChapter}
 
 % ~~ Section Headings Style ~~
-
+\setsecnumdepth{subsection}
 \setsecnumformat{%
 	\fontsize{48pt}{72pt}\sectionNumbers\selectfont {%
-		\color{sectionNumbersColour}\raisebox{-0.25ex}{\thesection} \hspace*{-7mm}
+		\color{sectionNumbersColour}\raisebox{-0.25ex}{\thesection} \hspace*{-6mm}
 		}}
 
 \setsecheadstyle{ \fontsize{20pt}{30pt}\sectionFont\selectfont}	
-		
+
+% Subsection
+\setsubsechook{\setsecnumformat{%
+	\fontsize{30pt}{57pt}\sectionNumbers\selectfont {%
+		\color{sectionNumbersColour}\raisebox{-0.25ex}{\thesubsection} \hspace*{-3mm}
+		}}}
+
+\setsubsecheadstyle{ \fontsize{14pt}{24pt}\sectionFont\selectfont}	
