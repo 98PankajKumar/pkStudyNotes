@@ -153,10 +153,10 @@
 
 % ~~ Section Headings Style ~~
 \setsecnumdepth{subsection}
-\setsecnumformat{%
+\setsechook{\setsecnumformat{%
 	\fontsize{48pt}{72pt}\sectionNumbers\selectfont {%
 		\color{sectionNumbersColour}\raisebox{-0.25ex}{\thesection} \hspace*{-6mm}
-		}}
+		}}}
 
 \setsecheadstyle{ \fontsize{20pt}{30pt}\sectionFont\selectfont}	
 
